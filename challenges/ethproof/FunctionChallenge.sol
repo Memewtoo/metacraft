@@ -3,10 +3,10 @@
 pragma solidity ^0.8.17;
 
 contract FunctionChallenge {
-    uint public minContribution;
+    uint256 public minContribution;
 
     /** Instatantiate the minimum contribution upon creating an instance */
-    constructor(uint num){
+    constructor(uint256 num){
         minContribution = num;
     }
 
@@ -21,8 +21,8 @@ contract FunctionChallenge {
     }
 
     /** Gets the sum of two numbers*/
-    function getSum(uint num1, uint num2)public pure returns(uint){
-        uint sum = num1 + num2;
+    function getSum(uint256 num1, uint256 num2)public pure returns(uint){
+        uint256 sum = num1 + num2;
         return sum;
     }
     
