@@ -12,7 +12,7 @@ contract FunctionChallenge {
 
     /** Allow to send money to the contract */
     function contribute() public payable {
-
+        require(msg.value >= minContribution);
     }
 
     /** Displays the minimum contribution*/
