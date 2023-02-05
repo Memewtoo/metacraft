@@ -2,12 +2,10 @@
 pragma solidity ^0.8.0;
 
 contract Variables {
+    /** State Variable */
     uint num;
-    string str;
-    bool flag;
-    address sender;
 
-    /** Getter and Setter method for num*/
+    /** Getter and Setter for State Variable*/
     function getNum() public view returns(uint){
         return num;
     }
@@ -16,30 +14,17 @@ contract Variables {
         num = n;
     }
 
-    /** Getter and Setter method for str*/
-    function getStr() public view returns(string memory){
-        return str;
+    /** 
+    Local Variable as well as the
+    Getter and Setter method for Local variable
+    */
+
+    function setStr(string memory message) public pure returns(string memory){
+         return message;
     }
 
-    function setStr(string memory message) public{
-        str = message;
-    }
-
-    /** Getter and Setter method for flag*/
-    function getFlag() public view returns(bool){
-        return flag;
-    }
-
-    function setFlag(bool check) public{
-        flag = check;
-    }
-
-    /** Getter and Setter method for sender*/
-    function getAddress() public view returns(address){
-        return sender;
-    }
-
-    function setAddress(address addr) public{
-        sender = addr;
+    /** Getting the value of a global variable */
+    function getTimestamp() public view returns(uint){
+        return block.timestamp;
     }
 }
