@@ -8,7 +8,7 @@ contract Project {
     /** Constructor function that is automatically called
         when an instance is created 
     */
-    constructor (uint256 minimum) public {
+    constructor (uint256 minimum) {
         minContribution = minimum;
     }
 
@@ -18,7 +18,7 @@ contract Project {
     }
 
     function getContribute() public payable {
-        assert(msg.value >= minContribution)
+        assert(msg.value >= minContribution);
     }
 
     error InvalidAmount (uint256 sent, uint256 minRequired);
@@ -27,7 +27,7 @@ contract Project {
         uint256 amount = msg.value;
 
         if(amount < minContribution){
-            revert invalidAmount({
+            revert InvalidAmount({
                 sent: amount,
                 minRequired: minContribution
             });
