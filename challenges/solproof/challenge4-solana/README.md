@@ -14,4 +14,4 @@ The `createTransaction` is responsible for actually creating and sending the tra
 By this approach, I observed that a layer of abstraction has been added on the transactions on Break Solana Game.
 
 Overall, when compared to the HelloWorld Program, I can say the Solana Break Game is high-level by abstracting the low-level details of creating and sending transations
-while, HellowWorld seems to be a more a low-level and traditional way to create and send Solana transactions.
+while, HelloWorld seems to be a more a low-level and traditional way to create and send Solana transactions.
