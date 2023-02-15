@@ -1,18 +1,18 @@
 # Account
 
-"Create a new Solana account" button exists
-New keypair is generated
-Two SOL is airdropped to the keypair
+- "Create a new Solana account" button exists
+- New keypair is generated
+- Two SOL is airdropped to the keypair
 
 # Wallet
 
-"Connect to Phantom Wallet" button exists
-Phantom Wallet is connected or a link is provided for installing the extension
+- "Connect to Phantom Wallet" button exists
+- Phantom Wallet is connected or a link is provided for installing the extension
 
 # Transaction
 
-"Transfer to new wallet" button exists"
-Two SOL from account is transferred to the connected wallet 
+- "Transfer to new wallet" button exists"
+- Two SOL from account is transferred to the connected wallet 
 
 ----------------------------------------------------------------
 
