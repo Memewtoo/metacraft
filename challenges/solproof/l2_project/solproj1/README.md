@@ -1,3 +1,21 @@
+#Account
+
+"Create a new Solana account" button exists
+New keypair is generated
+Two SOL is airdropped to the keypair
+
+#Wallet
+
+"Connect to Phantom Wallet" button exists
+Phantom Wallet is connected or a link is provided for installing the extension
+
+#Transaction
+
+"Transfer to new wallet" button exists"
+Two SOL from account is transferred to the connected wallet 
+
+----------------------------------------------------------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
