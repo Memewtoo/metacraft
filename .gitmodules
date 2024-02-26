@@ -1,6 +1,2 @@
-[submodule "challenges/solproof/intermediate/LS1-Module1/child"]
-	path = challenges/solproof/intermediate/LS1-Module1/child
-	url = https://github.com/solana-labs/example-helloworld.git
-[submodule "challenges/solproof/intermediate/LS1-Module1/project1-solana"]
-	path = challenges/solproof/intermediate/LS1-Module1/project1-solana
-	url = https://github.com/solana-labs/example-helloworld.git
+
+
