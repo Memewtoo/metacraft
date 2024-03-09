@@ -2,6 +2,10 @@
 
 A Solana-based token staking program developed using the Anchor framework. This program enables users to stake and destake tokens, earning rewards for staking. The system includes functionalities like vault initialization, associated token account creation, airdrops, and balance reading.
 
+<h1 align="center">High-Level Diagram</h1>
+
+![image](https://github.com/Memewtoo/metacraft/assets/60632424/cd83667e-2dec-4d40-b84e-e627eaae266d)
+
 ## Key Features
 
 - **Staking:** Users can stake tokens to earn rewards.
