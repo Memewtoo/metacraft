@@ -16,6 +16,7 @@ describe("diamond-hands", async () => {
   // Initialize timestamp variables for the tests
   // Convert to proper unix timestamp format (in seconds)
   let timestampDeposit = Math.floor((new Date('2024-03-29')).getTime() / 1000);
+  let timestampDeposit2 = Math.floor((new Date('2024-06-01')).getTime() / 1000);
 
   // Generate a user1 for the transactions
   let user1 = await Keypair.generate();
@@ -74,6 +75,44 @@ describe("diamond-hands", async () => {
     } catch(err) {
       // If the transaction fails, the test passes
       console.log("Another User failed to withdraw funds from User's Bank Account");
+      assert.ok(true);
+    }
+  })
+
+  // Withdraw early ahead of the target date
+  it ("Failed: User withdraw funds earlier before the target date", async () => {
+    try{
+
+      // Derive the bank address of the test transaction
+      let bankAccount2 = await PublicKey.findProgramAddressSync([
+        wallet.publicKey.toBuffer(), 
+        wallet.publicKey.toBuffer(), 
+        Buffer.from(timestampDeposit2.toString())], program.programId);
+      
+      // Prepare the instruction that would be executed on same transaction as the withdraw bank
+      const createBankTx = await program.methods.createBank(new anchor.BN(timestampDeposit2), new anchor.BN(25))
+      .accounts({
+        bank: bankAccount2[0],
+        sender: wallet.publicKey,
+        receiver: wallet.publicKey,
+      })
+      .prepare()
+
+      // Execute the withdraw Bank and the createBank instruction in one transaction
+      const tx = await program.methods.withdrawBank(new anchor.BN(timestampDeposit2))
+      .preInstructions([createBankTx.instruction])
+      .accounts({
+        bank: bankAccount2[0],
+        sender: wallet.publicKey,
+        receiver: wallet.publicKey
+      })
+      .rpc()
+
+      // If the transaction succeeds, the test should fail
+      assert.ok(false, "User was able to withdraw funds earlier from the target date")
+    } catch(err) {
+      // If the transaction fails, the test passes
+      console.log("User failed to withdraw funds earlier from the target date");
       assert.ok(true);
     }
   })
